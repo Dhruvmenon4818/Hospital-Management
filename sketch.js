@@ -1,26 +1,26 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
 
-var engine, world;
 var backgroundimg
+
+var doctor, patient, doctorImg, patientImg
 
 function preload(){
 backgroundimg=loadImage("hospitalimage.png");
+doctorImg=loadImage("doctor2.png");
+patientImg=loadImage("patient.png");
 
 
 }
 
 function setup(){
-    var canvas = createCanvas(displayWidth,displayHeight);
-    engine = Engine.create();
-    world = engine.world;
-
+    createCanvas(windowWidth,windowHeight);
     
+    doctor=createSprite(1000,400,200,200);
+doctor.addImage(doctorImg);
+ doctor.scale=0.2
 }
 
 function draw(){
     background(backgroundimg);
-    Engine.update(engine);
-
+    
+drawSprites();
 }
